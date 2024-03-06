@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gamelist</string>
+    <string name="helloworld">Bonjour</string>
+    <string name="name">Nom</string>
+    <string name="nameE">Nom</string>
+    <string name="ok">OK !</string>
+</resources>

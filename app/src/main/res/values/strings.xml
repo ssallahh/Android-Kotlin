@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Gamelist</string>
+    <string name="ic_pc_url" translatable="false">https://img.icons8.com/color/512/steam.png</string>
+    <string name="ic_xbox_series_url" translatable="false">https://img.icons8.com/color/512/xbox-series-x.png</string>
+    <string name="ic_xbox_one_url" translatable="false">https://img.icons8.com/color/512/xbox-one-x.png</string>
+    <string name="ic_ps4_url" translatable="false">https://img.icons8.com/color/512/playstation-4.png</string>
+    <string name="ic_ps5_url" translatable="false">https://img.icons8.com/fluency/512/playstation-5.png</string>
+    <string name="ic_switch_url" translatable="false">https://img.icons8.com/color/512/nintendo-switch-handheld.png</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="helloworld">Hello World</string>
+    <string name="name">Name</string>
+    <string name="nameE">Name</string>
+    <string name="ok">OK</string>
+    <string name="game_details_title">Titre du jeu : %1$s</string>
+    <string name="game_details_date">Date: %1$s</string>
+
+
+    <!-- TODO: Here place all your string used for the application -->
+
+</resources>
