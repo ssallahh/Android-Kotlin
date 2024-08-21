@@ -13,13 +13,9 @@ import java.io.InputStreamReader
 
 object DataManager {
     // TODO : Uncomment before implementing the readFile method
-
-    // TODO : add the attribute games
-    // Q5
     lateinit var games:List<Game>
+    // TODO : add the attribute games
     fun readFile(context : Context){
-
-
         val moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
             .build()
@@ -42,7 +38,6 @@ object DataManager {
             // TODO : initialize games from jsonString
             // Q6
             games = jsonAdapter.fromJson(jsonString) ?: emptyList()
-
         }
         catch (e : IOException){
             e.printStackTrace()
@@ -50,4 +45,7 @@ object DataManager {
     }
 
     //TODO : function getGame(pos:Int)
+    fun getGame(pos:Int): Game {
+        return games.get(pos)
+    }
 }

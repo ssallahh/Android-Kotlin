@@ -14,6 +14,8 @@
     <string name="ok">OK</string>
     <string name="game_details_title">Titre du jeu : %1$s</string>
     <string name="game_details_date">Date: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
     <!-- TODO: Here place all your string used for the application -->

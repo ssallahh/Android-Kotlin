@@ -4,16 +4,34 @@ import ConsoleAdapter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.insa.gamelist.databinding.ActivityMainBinding
 import com.insa.gamelist.extensions.load
 import com.insa.gamelist.utils.DataManager
 import java.text.SimpleDateFormat
 import java.util.Date
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity : AppCompatActivity(){
     private lateinit var binding: ActivityMainBinding
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        // val navController = navHostFragment.navController
+    }
+}
+
+/*
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,38 +80,6 @@ class MainActivity : AppCompatActivity() {
         DataManager.games.flatMap{ it.console }.distinct().forEach { console ->
             Log.d("Game", "number of game launch on $console : ${DataManager.games.filter { it.console.contains(console) }.size}")
         }
-
-
-        // pour le TP 5
-        //binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-
-
-        setContentView(view)
-
-        val selectedGame = gamesList.firstOrNull()
-        if (selectedGame != null) {
-            // Set the game details to the layout
-            val date = SimpleDateFormat("dd/MM/yyyy").format(Date(selectedGame.timestamp))
-            val consoleAdapter = ConsoleAdapter(selectedGame.console)
-            binding.includeGameDetails.recyclerViewConsole.adapter = consoleAdapter
-            binding.includeGameDetails.nameGame.text = getString(R.string.game_details_title, selectedGame.title)
-            binding.includeGameDetails.dateGame.text = getString(R.string.game_details_date, date)
-            binding.includeGameDetails.genreGame.text = "Genre: ${selectedGame.type}"
-            binding.includeGameDetails.devGame.text = "Développeur: ${selectedGame.developer}"
-            binding.includeGameDetails.editorGame.text = "Editeur: ${selectedGame.editor}"
-            binding.includeGameDetails.descriptionGame.text = selectedGame.description
-            binding.includeGameDetails.imageView.load(selectedGame.image)
-        }
-
-
-        // pour le TP 7
-        /*
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        val  adapter = GameAdapter(gamesList)
-        binding.recyclerView.adapter = adapter
-        //binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        */
     }
 }
+*/
